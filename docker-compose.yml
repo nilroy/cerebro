@@ -1,0 +1,15 @@
+version: '3'
+services:
+  cerebro:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"  # Port for your Cerebro application
+    networks:
+      - cerebro-network  # A custom network for Cerebro
+    hostname: cerebro  # The hostname of the Cerebro container
+    # network_mode: host
+
+networks:
+  cerebro-network:
